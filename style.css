@@ -1,0 +1,20 @@
+.citySearch {
+    background-color: lightgray;
+    padding-top: 20px;
+    
+}
+
+#cityInfo {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid gray;
+}
+
+#forecast {
+    padding: 20px;
+    margin: 20px; 
+}
+
+#cityName {
+    font-size: 40px;
+}
