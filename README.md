@@ -1,3 +1,9 @@
+# README SUBMISSION:
+The application takes user input placed into the search bar and adds the city name to the queryURL for the Open Weather API. From there we extract the data given from different API queryURLs provided by Open Weather and spread the data throughout the dashboard. From the API we can extract the current and future weather forecasts, humidity, temperature, and index among many other bits of information. 
+
+The user can see what they have recently searched for as the city names appear below the search bar. This is done by pushing the city names to an array that stores the names into local storage. Unfortunately at this point I could not figure out how to keep the search history info on the page if the user were to refresh despite the array remaining in local storage.
+
+
 # 06 Server-Side APIs: Weather Dashboard
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.

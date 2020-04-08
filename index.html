@@ -22,18 +22,26 @@
                     <h3>Search for a city</h3>
                     <input id="cityInput">
                     <button id="citySearch">Search</button>
-                    <ul>
-                        <li id="city1"></li>
-                        <li id="city2"></li>
-                        <li id="city3"></li>
-                        <li id="city4"></li>
-                        <li id="city5"></li>
-                        <li id="city6"></li>
-                    </ul>         
+                    <br>
+                    <!-- <ul> -->
+                        <button id="city1"></button>
+                        <br>
+                        <button id="city2"></button>
+                        <br>
+                        <button id="city3"></button>
+                        <br>
+                        <button id="city4"></button>
+                        <br>
+                        <button id="city5"></button>
+                        <br>
+                        <button id="city6"></button>
+                    <!-- </ul>          -->
                 </div>
             <div class="col-sm-8">
               <div id="cityInfo">
-                  <p id="cityName"></p>
+                  <p id="cityName"></p> 
+                  <img src="" id="todayPic" class="todayImg">
+                  <p id="currentDay"></p>
                   <p>Temperature: <span id="temperature"></span></p>
                   <p>Humidity: <span id="humidity"></span></p>
                   <p>Wind Speed: <span id="windSpeed"></span></p>
@@ -88,6 +96,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

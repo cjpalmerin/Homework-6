@@ -1,9 +1,16 @@
-
-
-
 var citySearch = $("#citySearch");
 
 var cityHistory = []
+
+// $("#city1").text(localStorage.getItem(cityHistory[5]));
+// $("#city2").text(cityHistory[4]);
+// $("#city3").text(cityHistory[3]);
+// $("#city4").text(cityHistory[2]);
+// $("#city5").text(cityHistory[1]);
+// $("#city6").val(localStorage.getItem(cityHistory[0]));
+
+console.log(localStorage.getItem(cityHistory[0]));
+console.log(cityHistory);
 
 citySearch.on("click", function () {
     var cityInput = $("#cityInput").val();
@@ -29,7 +36,7 @@ citySearch.on("click", function () {
   $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function loadData1 (response) {
       console.log(response);
 
       var tempK = response.main.temp;
@@ -42,8 +49,6 @@ citySearch.on("click", function () {
 
       var wind = response.wind.speed;
       $("#windSpeed").text(wind + "mph");
-
-
 
       var lat = response.coord.lat;
       var lon = response.coord.lon;
@@ -66,6 +71,24 @@ citySearch.on("click", function () {
       }
       });
 
+      var weatherType = response.weather[0].main;
+      var todayPic = $("#todayPic")
+      
+      if (weatherType === "Rain") {
+        todayPic.attr("src", "images/clipart-rain-emoji-1.png")
+      }
+      else if (weatherType === "Clouds") {
+        todayPic.attr("src", "images/35cdae25b1b951859c8327555f3e6942_download-free-png-white-computing-cloud-emoji-free-download-image-_800-800.png")
+      }
+      else if (weatherType === "Thunderstorm") {
+        todayPic.attr("src", "images/thunder-cloud-and-rain_26c8-fe0f.png")
+      }
+      else {
+        todayPic.attr("src", "images/sun-emoji-png-6.png")
+      }
+
+        var date = moment().format('llll');
+        $("#currentDay").text(date);
 
 
       var cityId = response.id;
@@ -74,7 +97,7 @@ citySearch.on("click", function () {
       $.ajax({
         url: forecastURL,
         method: "GET"
-      }).then(function(r) {
+      }).then(function loadData2(r) {
         console.log(r);
 
         $("#fDate1").text(r.list[0].dt_txt.slice(0, 10));
@@ -180,18 +203,18 @@ citySearch.on("click", function () {
         else {
           $("#fImg5").attr("src", "images/sun-emoji-png-6.png")
         }
+
+        $("#city6").on("click", function () {
+          cityInput = $("#city1").val();
+          console.log(cityInput)
+
+
+        });
       });
     });
 
 })
 
-$("#city1").text(localStorage.getItem(cityHistory[5]));
-$("#city2").text(cityHistory[4]);
-$("#city3").text(cityHistory[3]);
-$("#city4").text(cityHistory[2]);
-$("#city5").text(cityHistory[1]);
-$("#city6").text(localStorage.getItem(cityHistory[0]));
 
 
-//CREATE CSS FOR A CARD SHAPE TO HAVE THE FORECAST INSIDE OF.
-//HAVE JAVASCRIPT CREATE DIVS WITH THE SAME ID USED FOR CSS
+

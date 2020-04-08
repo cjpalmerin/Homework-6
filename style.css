@@ -53,3 +53,20 @@
     margin-left: 25%;
     margin-bottom: 30px;
 }
+
+.todayImg {
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+#cityName {
+    display: inline-block;
+
+}
+
+#currentDay {
+    font-size: 20px;
+}
